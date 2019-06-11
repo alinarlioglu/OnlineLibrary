@@ -1,0 +1,33 @@
+html, body {
+    /*Removing the white border on the sides of the screen. Looks more appealing.*/
+    margin: 0;
+    padding: 0;
+    /*Setting a sunset fade colour as the background and making it consistent throughout the page.*/
+    background: linear-gradient(45deg, #FBD72B, #F9484A);
+    /*Starts the colour from the left-bottom of the screen. */
+    background-position: left bottom;
+    /*Makes the colour singular and consistent throughout the screen.*/
+    background-repeat: no-repeat;
+    /*background-size: width height - calc(100% - 100px) removes exactly 100px from the end of the background.
+    * Due to 'left bottom', the end of the background is at the navigation bar.*/
+    background-size: 100% calc(100% - 100px);
+}
+
+.contactUsContainer {
+    width: 35%;
+    margin: auto;
+    /*When specifying width or height, then this will allow the padding and margins of existing elements to be
+    taken into account as well.*/
+    box-sizing: border-box;
+    /*White font colour.*/
+    color: rgb(0,0,125);
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 16px;
+}

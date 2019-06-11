@@ -1,0 +1,111 @@
+/*The size and aptitude of the search container.*/
+.searchContainer * {
+    padding: 5px;
+    display: inline;
+}
+
+
+.navigation-bar {
+    background-color: hsl(0, 0%, 30%);
+    height: 30px;
+    width: 100%;
+    /*Helps with organising the flow of the navigation links and puts them in a neat column next to each other.*/
+    display: grid;
+    /*5 columns with each column taking up 20% of the grid's width.*/
+    /*5 column space for 5 navigation links - write, my fictions, about us, contact us, search bar.*/
+    grid-template-columns: 16% 16% 16% 16% 16% 20%;
+    /*Each element within a column may use one-fifth (1/6) of the grid's total width.*/
+    grid-column: 1 / 6;
+    /*hsl(colour, fully saturated - gray, 30% black - 50% neutral - 100% white).*/
+    background-color: hsl(0, 0%, 30%);
+}
+
+
+
+#writeBook {
+    color: #FFD700;
+    font-size: 20px;
+    /*Positioning the grid element to the centre of it's cell (AKA assigned space).*/
+    justify-self: center;
+    /*Top and bottom padding is 0px, so no need to increase it's shape. Left and right sides of the shape increased by 20px.*/
+    padding: 0px 20px;
+    text-decoration: none;
+}
+#writeBook:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}
+
+
+
+#myFictions {
+    color: #FFD700;
+    font-size: 20px;
+    /*Positioning the grid element to the centre of it's cell (AKA assigned space).*/
+    justify-self: center;
+    /*Top and bottom padding is 0px, so no need to increase it's shape. Left and right sides of the shape increased by 20px.*/
+    padding: 0px 20px;
+    text-decoration: none;
+}
+#myFictions:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}
+
+
+#findFictions {
+    color: #FFD700;
+    font-size: 20px;
+    /*Making the button centre to the cell.*/
+    justify-self: center;
+    /*Makes the button larger and stand out. Larger from left and right only.*/
+    padding: 0px 20px;
+    /*Removing the line on the anchor.*/
+    text-decoration: none;
+}
+#findFictions:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}
+
+
+
+#aboutUs {
+    color: #FFD700;
+    font-size: 20px;
+    /*Positioning the grid element to the centre of it's cell (AKA assigned space).*/
+    justify-self: center;
+    /*Top and bottom padding is 0px, so no need to increase it's shape. Left and right sides of the shape increased by 20px.*/
+    padding: 0px 20px;
+    text-decoration: none;
+}
+#aboutUs:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}
+
+
+
+#contactUs {
+    color: #FFD700;
+    font-size: 20px;
+    /*Positioning the grid element to the centre of it's cell (AKA assigned space).*/
+    justify-self: center;
+    /*Top and bottom padding is 0px, so no need to increase it's shape. Left and right sides of the shape increased by 20px.*/
+    padding: 0px 20px;
+    text-decoration: none;
+}
+#contactUs:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}

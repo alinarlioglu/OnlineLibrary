@@ -1,0 +1,67 @@
+html, body {
+    /*To remove the white borders all the sides of the screen.*/
+    margin: 0;
+    padding: 0;
+    /*Hides the scroll bar - needed to set the fade background colour after the navigation bar. 
+    * As the 'writeBook' div height increases, the scrollbar increases, thus some space remains white. By hiding the 
+    * scroll bar, I remove all the white spaces caused by the scroll bar helping to set the fade background colour effectively.*/
+    overflow-y: hidden;
+}
+
+
+.writeBook {
+    position: relative;
+    bottom: 17px;
+    /*Defining box size.*/
+    width: 100%;
+    height: 525px;
+    /*Setting a sunset fade colour as the background and making it consistent throughout the page.*/
+    background: linear-gradient(45deg, #FBD72B, #F9484A);
+    background-repeat: no-repeat;
+    /*Centres the container for the top and bottom of screen, and left and right of screen.*/
+    margin: 0 auto;
+    /*Aligning the text at the centre of the screen. Setting the boldness and the font type as well.*/
+    text-align: center;
+    font-weight: 800;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+
+.writeBook [type="text"] {
+    /*Each element on its own line.*/
+    display: block;
+    /*Input text fields centred on the screen.*/
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 1100px;
+    height: 300px;
+}
+
+ #submitFiction button {
+     /*Making the 'Submit' button rounder.*/
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#submitFiction button:after {
+    transform: translate3d(-100%, 100%, 0);
+    transition: all .5s;
+}
+
+#submitFiction button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white; 
+    transform: translate3d(0, 0, 0);
+    transition: all .5s;
+}
+
+
+.errorMessage {
+    display: block;
+    
+}

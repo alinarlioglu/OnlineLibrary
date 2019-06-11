@@ -1,0 +1,60 @@
+/*Colour and positioning as well as font properities of the 'Browse' button - styling it.*/
+.browseBtn {
+    background-color: hsl(0, 0%, 30%);
+    /*Blends in to the other navigation buttons.*/
+    border: none;
+    color: #FFD700;
+    font-size: 20px;
+    /*Positioning the grid element to the centre of it's cell (AKA assigned space).*/
+    justify-self: center;
+    /*Top and bottom padding is 0px, so no need to increase it's shape. Left and right sides of the shape increased by 20px.*/
+    padding: 0px 20px;
+}
+
+/*Positioning the elements inside the 'div' container.*/
+.dropdown {
+    position: relative;
+    display: block;
+}
+
+/*The content of the dropdown box. Hidden by default.*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 60%);
+    min-width: 107px;
+    /*Giving a high priority of execution, so this will be executed first.*/
+    z-index: 1;
+}
+
+/*Styling the links within the dropdown menu. On its own line, font size, colour, no underlining etc.*/
+.dropdown-content a {
+    display: block;
+    color: #FFD700;
+    font-size: 20px;
+    padding: 0px 10px;
+    /*Removing the underline on the anchor links within the dropdown-content.*/
+    text-decoration: none;
+}
+
+/*Hover effect on the links within the dropdown menu.*/
+.dropdown-content a:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}
+
+
+/*Showing the dropdown content on hover on the 'Browse' button.*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*Changing the background colour and font colour of the 'Browse' button when the dropdown-content is shown.*/
+.dropdown:hover .browseBtn {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+}

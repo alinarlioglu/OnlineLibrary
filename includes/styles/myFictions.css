@@ -1,0 +1,41 @@
+html, body {
+    /*Removing the white border on the sides of the screen. Looks more appealing.*/
+    margin: 0;
+    padding: 0;
+    /*Setting a sunset fade colour as the background and making it consistent throughout the page.*/
+    background: linear-gradient(45deg, #FBD72B, #F9484A);
+    /*Starts the colour from the left-bottom of the screen. */
+    background-position: left bottom;
+    /*Makes the colour singular and consistent throughout the screen.*/
+    background-repeat: no-repeat;
+    /*background-size: width height - calc(100% - 100px) removes exactly 100px from the end of the background.
+    * Due to 'left bottom', the end of the background is at the navigation bar.*/
+    background-size: 100% calc(100% - 100px);
+}
+
+.myFictionsContainer {
+    position: relative;
+    bottom: 20px;
+    /*Setting the boldness and the font type.*/
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+
+.myFictionContainer {
+    border-bottom: 2px solid #DA70D6;
+}
+
+h3 {
+    text-align: center;
+}
+
+.userAuthorPosition {
+    text-align: right;
+    position: relative;
+    right: 10px;
+}
+
+.myFictionBlurbPosition {
+    text-align: left;
+}
+

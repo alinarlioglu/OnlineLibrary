@@ -1,0 +1,5 @@
+/*Contains and controls the width & height of the website logo.*/
+.logoContainer {
+    width: 180px;
+    height: 70px;
+}
