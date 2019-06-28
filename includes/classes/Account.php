@@ -63,13 +63,19 @@ class Account {
     }
     
     private function addToDatabase($un, $fn, $ln, $em, $pw) {
+        //Creates an empty favourites list.
+        $favourites = array();
+        //Converting the 'favourites' array to JSON to store it to the database. Preventing 'json_encode' from
+        //turning the array into an associative array when inserted to the database via 'array_values'.
+        $addArrayToDatabaseJSON = json_encode(array_values($favourites));
+        
         //Creates a random hash function and inputs it with the password, then enters the combined string to the database.
         //Requires password_verify to decrypt the combined string hashed password -> excellent secure way as user cannot
         //login until the password is verified even if combined string is written correctly.
         $pw_hash = password_hash($pw, PASSWORD_BCRYPT);
         $date = date("Y-m-d");
         
-        $query = mysqli_query($this->connToDatabase, "INSERT INTO account VALUES ('', '$un', '$fn', '$ln', '$em', '$pw_hash', '$date')");
+        $query = mysqli_query($this->connToDatabase, "INSERT INTO account VALUES ('', '$un', '$fn', '$ln', '$em', '$pw_hash', '$date', '$addArrayToDatabaseJSON')");
     
         return $query;
     }
@@ -91,7 +97,7 @@ class Account {
             return;
         }
         
-        //Creating a query to check if any same email exists in the database.
+        //Creating a query to check if any same username exists in the database.
         $query = mysqli_query($this->connToDatabase, "SELECT * FROM account WHERE username='$un'");
         //Executing the query and seeing the number of rows returned AKA users.
         if(mysqli_num_rows($query) != 0){

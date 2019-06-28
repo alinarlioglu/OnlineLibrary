@@ -1,0 +1,103 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    /*Inserting the background image and positioning it.*/
+    background-image: url("../images/bg.jpg");
+    background-position: center;
+    /*Covers the area of the whole page.*/
+    background-size: cover;
+}
+
+
+#background {
+    /*Allows both the login and register container to act as rows on a grid, so register container goes below the login container.*/
+    display: grid;
+    /*Doing a right border next to the containers.*/
+    width: 29%;
+    border-right: 1px solid #fff;
+}
+
+
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+#loginContainer, #registerContainer {
+    display: block;
+    /*Width is 30% of page since 'loginContainer' & 'registerContainer' doesn't have a parent AKA not since another form tag.*/
+    width: 30%;
+    float: left;
+    padding: 30px;
+    color: #fff;
+}
+
+
+#loginContainer input, #registerContainer input {
+    border-radius: 10px;
+    padding: 7px;
+}
+
+#loginContainer p, #registerContainer p {
+    margin: 7px;
+}
+
+
+#loginContainer button, #registerContainer button {
+    margin: 10px 18%;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+#registerContainer button {
+    /*Since code is executed sequentially, this overwrites the margin for the 'Sign Up' button, so it's more aligned in the 
+     centre of the input contaienrs.*/ 
+    margin: 10px 15%;
+}
+
+#loginContainer button:hover, #registerContainer button:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.showForm {
+    width: 1024px;
+    padding: 10px;
+    font-size: 11px;
+    text-align: left;
+}
+
+
+
+
+/*Styling for the text on the register page.*/
+
+
+
+
+.textAdvertisement {
+    /*Container will act as a table cell e.g. grid cell.*/
+    display: table-cell;
+    /*Positioning the container to same level as it's first parent AKA loginContainer. Moving it to the right side of the screen.*/
+    position: absolute;
+    right: 0;
+    /*Increasing the width and height of the container's shape - for positioning purposes.*/
+    margin: 170px 220px;
+}
+
+.textAdvertisement h1 {
+    color: white;
+    font-size: 40px;
+}
+
+/*Changing font colour and the font size.*/
+.textAdvertisement li {
+    font-size: 19px;
+    color: #dee4e7;
+}
+
+/*Changing colour of the bullet point.*/
+.textAdvertisement li::before {
+    color: #dee4e7;
+}

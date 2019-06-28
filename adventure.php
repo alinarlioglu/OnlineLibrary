@@ -23,41 +23,27 @@ include("includes/database/config.php");
         <link rel="stylesheet" type="text/css" href="includes/styles/myFictions.css">
         
         
+        <!--Reference to the jQuery library. Simplifies JavaScipt code much easier. Allows using jQuery in the page.-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         
         
     </head>
     <body>
-        <a href="index.php"><img class="logoContainer" src="includes/images/logo.png" alt="Logo of Online Library"></a>
         
-        <div class="navigation-bar">
-            <a id="writeBook" href="writeBook.php">Write</a>
-            <a id="myFictions" href="myFictions.php">My Fictions</a>
-            
-            <div class="dropdown">
-                <button class="browseBtn">Browse</button>
-                <div class="dropdown-content">
-                    <a href="adventure.php">Adventure</a>
-                    <a href="fantasy.php">Fantasy</a>
-                </div>
-            </div>
-           
-            <a id="aboutUs" href="aboutUs.php">About Us</a>
-            <a id="contactUs" href="contactUs.php">Contact Us</a>
-            <form class="searchContainer" action="index.php" method="POST">
-                <input id="searchText" name="searchText" type="text" placeholder="Enter book title or author">
-                <button type="submit" name="search">Search</button>
-            </form>
-        </div>
+        
+        <!--Copying and pasting the HTML code for the navigationBar to here.-->
+        <?php include("includes/navigationBar.php") ?>
+        
         
         
         <div class="fantasyBooksContainer">
+            
             <?php
             //Detecting if a value has been set to the 'userLoggedIn' variable - if it has, then the user has logged.
             if(isset($_SESSION['userLoggedIn'])){
-                //Obtainin
                 $username = $_SESSION['userLoggedIn'];
                 //Fetching all book rows where the genre is 'Fantasy'.
-                $fantasyBooksQuery = mysqli_query($connectionToDatabase, "SELECT bookName,author,genre,blurb FROM books WHERE genre='Adventure'");
+                $fantasyBooksQuery = mysqli_query($connectionToDatabase, "SELECT isbn,bookName,author,genre,blurb FROM books WHERE genre='Adventure'");
             
                 if(mysqli_num_rows($fantasyBooksQuery) == 0){
                     echo "No fantasy books available.";
@@ -65,7 +51,14 @@ include("includes/database/config.php");
                 
                 //Turns all the data per book row into an associative array e.g. hash table with key and value.
                 while($row = mysqli_fetch_array($fantasyBooksQuery)) {
-                    echo "<div class='myFictionContainer'><h3>{$row['bookName']}</h3><p class='userAuthorPosition'><strong>By</strong> {$row['author']}<p><strong>Genre: </strong>{$row['genre']}</p></p><p class='myFictionBlurbPosition'>{$row['blurb']}</p></div>";
+                    echo "<div class='myFictionContainer'>
+                            <a href='bookInfo.php?isbn={$row['isbn']}' role='link' tabindex='0'><h3>{$row['bookName']}</h3></a>
+                            <p class='userAuthorPosition'><strong>By</strong> {$row['author']}
+                                <p><strong>Genre: </strong>{$row['genre']}
+                                </p>
+                            </p>
+                            <p class='myFictionBlurbPosition'>{$row['blurb']}</p>
+                         </div>";
                 }
             }
             //Not value set, so user hasn't logged.

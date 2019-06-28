@@ -41,34 +41,17 @@ function getInputValue($name) {
         
     </head>
     <body>
-        <a href="index.php"><img class="logoContainer" src="includes/images/logo.png" alt="Logo of Online Library"></a>
         
-        <div class="navigation-bar">
-            <a id="writeBook" href="writeBook.php">Write</a>
-            <a id="myFictions" href="myFictions.php">My Fictions</a>
-            
-            <div class="dropdown">
-                <button class="browseBtn">Browse</button>
-                <div class="dropdown-content">
-                    <a href="adventure.php">Adventure</a>
-                    <a href="fantasy.php">Fantasy</a>
-                </div>
-            </div>
-            
-            <a id="aboutUs" href="aboutUs.php">About Us</a>
-            <a id="contactUs" href="contactUs.php">Contact Us</a>
-            <form class="searchContainer" action="index.php" method="POST">
-                <input id="searchText" name="searchText" type="text" placeholder="Enter book title or author">
-                <button type="submit" name="search">Search</button>
-            </form>
-        </div>
+        
+        <!--Copying and pasting the HTML code for the navigationBar to here.-->
+        <?php include("includes/navigationBar.php") ?>
             
         <div class="writeBook">
             <form id="submitFiction" action="writeBook.php" method="POST">
                 <p>
                     <?php echo $book->checkForErrors("Your book title must be greater than 5 characters and less than 40 characters."); ?>
                     <label for="bookName">Book Title</label>
-                    <input id="bookName" type="text" name="bookName" placeholder="Enter book title" value="<?php getInputValue('bookName'); ?>">
+                    <input id="bookName" type="text" name="bookName" placeholder="Enter book title" value="<?php getInputValue('bookName'); ?>" required>
                 </p>
                 <p>
                     <?php echo $book->checkForErrors("Please select a genre."); ?>

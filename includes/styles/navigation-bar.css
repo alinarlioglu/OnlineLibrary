@@ -13,9 +13,9 @@
     display: grid;
     /*5 columns with each column taking up 20% of the grid's width.*/
     /*5 column space for 5 navigation links - write, my fictions, about us, contact us, search bar.*/
-    grid-template-columns: 16% 16% 16% 16% 16% 20%;
+    grid-template-columns: repeat(7, 14.2%);
     /*Each element within a column may use one-fifth (1/6) of the grid's total width.*/
-    grid-column: 1 / 6;
+    /*grid-column: 1 / 6;
     /*hsl(colour, fully saturated - gray, 30% black - 50% neutral - 100% white).*/
     background-color: hsl(0, 0%, 30%);
 }
@@ -36,6 +36,8 @@
     color: white;
     /*Makes the mouse turn into a pointer on hover.*/
     cursor: pointer;
+    /*Setting the element shape's bottom margin, so it's less than the amount set by the padding since the padding is larger than the margin. For hover effect.*/
+    margin-bottom: 28px;
 }
 
 
@@ -54,6 +56,8 @@
     color: white;
     /*Makes the mouse turn into a pointer on hover.*/
     cursor: pointer;
+    /*Setting the element shape's bottom margin, so it's less than the amount set by the padding since the padding is larger than the margin. For hover effect.*/
+    margin-bottom: 28px;
 }
 
 
@@ -72,6 +76,8 @@
     color: white;
     /*Makes the mouse turn into a pointer on hover.*/
     cursor: pointer;
+    /*Setting the element shape's bottom margin, so it's less than the amount set by the padding since the padding is larger than the margin. For hover effect.*/
+    margin-bottom: 28px;
 }
 
 
@@ -90,6 +96,8 @@
     color: white;
     /*Makes the mouse turn into a pointer on hover.*/
     cursor: pointer;
+    /*Setting the element shape's bottom margin, so it's less than the amount set by the padding since the padding is larger than the margin. For hover effect.*/
+    margin-bottom: 28px;
 }
 
 
@@ -108,4 +116,25 @@
     color: white;
     /*Makes the mouse turn into a pointer on hover.*/
     cursor: pointer;
+    /*Setting the element shape's bottom margin, so it's less than the amount set by the padding since the padding is larger than the margin. For hover effect.*/
+    margin-bottom: 28px;
+}
+
+#favourites {
+    color: #FFD700;
+    font-size: 20px;
+    /*Positioning the grid element to the centre of it's cell (AKA assigned space).*/
+    justify-self: center;
+    /*Top and bottom padding is 0px, so no need to increase it's shape. Left and right sides of the shape increased by 20px.*/
+    padding: 0px 20px;
+    text-decoration: none;
+}
+
+#favourites:hover {
+    background-color: hsl(0, 0%, 60%);
+    color: white;
+    /*Makes the mouse turn into a pointer on hover.*/
+    cursor: pointer;
+    /*Setting the element shape's bottom margin, so it's less than the amount set by the padding since the padding is larger than the margin. For hover effect.*/
+    margin-bottom: 28px;
 }

@@ -25,6 +25,12 @@ html, body {
     border-bottom: 2px solid #DA70D6;
 }
 
+/*Styling the button link which will lead to the book's chapters.*/
+.myFictionContainer a {
+    text-decoration: none;
+    color: black;
+}
+
 h3 {
     text-align: center;
 }
@@ -39,3 +45,24 @@ h3 {
     text-align: left;
 }
 
+.favourite, .favouritedBook {
+    /*The image will resize according to the page width which depends on the device used, so it resizes according to device's screen.*/
+    display: flex;
+    /*Positioning the container to same level as it's first parent AKA 'h3' element which is the first cell in the grid.*/
+    position: absolute;
+    right: 0;
+}
+
+/*Adds further styles onto 'favouritedBook' image.*/
+.favouritedBook {
+    /*Making the favouritedBook image the same size as the 'favourite' image. - consistency. */
+    width: 31px;
+}
+
+.favouriteBtn {
+    background: linear-gradient(45deg, #FBD72B, #F9484A);
+}
+
+.favouritedBtn {
+    background: linear-gradient(45deg, #FBD72B, #F9484A);
+}

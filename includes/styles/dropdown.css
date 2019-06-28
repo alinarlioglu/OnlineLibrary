@@ -13,6 +13,7 @@
 
 /*Positioning the elements inside the 'div' container.*/
 .dropdown {
+    justify-self: center;
     position: relative;
     display: block;
 }

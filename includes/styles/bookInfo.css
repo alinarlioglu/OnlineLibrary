@@ -1,0 +1,81 @@
+html, body {
+    /*Removing the white border around the page.*/
+    padding: 0;
+    margin: 0;
+    /*Setting a sunset fade colour as the background and making it consistent throughout the page.*/
+    background: linear-gradient(45deg, #FBD72B, #F9484A);
+    /*Starts the colour from the left-bottom of the screen. */
+    background-position: left bottom;
+    /*Makes the colour singular and consistent throughout the screen.*/
+    background-repeat: no-repeat;
+    /*background-size: width height - calc(100% - 100px) removes exactly 100px from the end of the background.
+    * Due to 'left bottom', the end of the background is at the navigation bar.*/
+    background-size: 100% calc(100% - 100px);
+}
+
+
+
+
+/*Styling each book place.*/
+
+
+.bookInfoContainer {
+    width: 35%;
+    display: inline-block;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.artworkContainer img {
+    width: 100px;
+}
+
+.artworkContainer span {
+    margin: 90px;
+    font-size: 20px;
+    position: relative;
+    bottom: 60px;
+}
+
+.authorContainer {
+    padding: 10px;
+}
+
+
+.chaptersContainer {
+    width: 40%;
+    /*Same as 'bookInfoContainer' - this will palce both div's next to each other - inline with each other basically.*/
+    display: inline-block;
+    /*Moving this container from the bottom of the 'bookInfoContainer' div to the top of it.*/ 
+    vertical-align: top;
+    /*Moves the chapter links as well as the header to the centre of the container.*/
+    text-align: center;
+    /*Increases left and right width of the container shape by 50px, so the chapters looks more centred on the screen.*/
+    margin: 0 50px;
+}
+
+
+/*Styling the button 'Add to Bookmarks'*/
+.favouriteContainer {
+    margin: 120px -50px;
+    padding: 5px;
+    width: 10%;
+    /*Making it move next to the 'chaptersContainer', so it looks more appealing and aligned.*/
+    display: inline-block;
+    vertical-align: top;
+    /*Making a border around the span element, so it looks like a button.*/
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    /*Moving the text to the centre of the container.*/
+    text-align: center;
+    /*Making the background colour of the span element 'white'.*/
+    background: white;
+    /*Makes the mouse change to a hand pointer when mouse is around the span element.*/
+    cursor: pointer;
+}
+
+.favouriteContainer span:hover {
+    /*hsl(colour spectrum 0-255, saturation (greyness) 0% - fully grey, black/white 50% - neutral)*/
+    background: hsl(0, 0%, 90%);
+    padding: 6px;
+}
